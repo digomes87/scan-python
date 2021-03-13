@@ -2,6 +2,13 @@ import socket
 from IPy import IP
 
 
+def check_ip(ip):
+    try:
+        IP(ip)
+        return(ip)
+    except ValueError:
+        return socket.gethostbyname(ip)
+                      
 def scan_port(ipaddress, port):
     try:
         sock = socket.socket()
@@ -12,6 +19,7 @@ def scan_port(ipaddress, port):
         print('[-] Portas '+ str(port)+' Fechadas! ')
 
 ipaddress = input('[+] Digite o Ip do Alvo: ')
+convert_ip = check_ip(ipaddress)
 
-for port in range(1,10):
-    scan_port(ipaddress, port)
+for port in range(75,85):
+    scan_port(convert_ip, port)

@@ -9,6 +9,10 @@
 # Icon must end with two \r
 Icon
 
+.main2.py
+.main2.py.swp
+main2.py
+main2.py
 .idea/
 
 # Thumbnails
